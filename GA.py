@@ -37,10 +37,22 @@ class solution:
         y = [city[1] for city in self.probl.cities]
         path_x = [x[city] for city in self.path]
         path_y = [y[city] for city in self.path]
+        plt.clf()
         plt.scatter(x, y)
         plt.plot(path_x, path_y)
         plt.title('Fitness Score: ' + str(self.fitness))
         plt.show()
+
+    def save_plot(self, name):
+        x = [city[0] for city in self.probl.cities]
+        y = [city[1] for city in self.probl.cities]
+        path_x = [x[city] for city in self.path]
+        path_y = [y[city] for city in self.path]
+        plt.clf()
+        plt.scatter(x, y)
+        plt.plot(path_x, path_y)
+        plt.title('Fitness Score: ' + str(self.fitness))
+        plt.savefig(name)
 
 class population:
     def __init__(self, probl, population_size = 50):
