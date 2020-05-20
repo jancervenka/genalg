@@ -1,10 +1,17 @@
 # GENALG
 
-Example of a genetic algorithm solution to traveling salesman problem.
+Example of a genetic algorithm solution to the traveling salesman problem.
+
+You can install the package using `setup.py` as:
+
+```bash
+python setup.py install
+```
+
+## Example
 
 ```python
 
-import logging
 from genalg.algorithm import GeneticAlgorithm, Problem
 
 cities = [(20, 30), (50, 10), (21, 22), (35, 40),
@@ -21,5 +28,5 @@ print(solution.fitness)
 print(solution.path)
 ```
 
-![problem90](img/problem_90.png "Solution to a problem with 90 cities")
-![problem20](img/problem_20.png "Solution to a problem with 20 cities")
+![problem90](img/problem_90.svg "Solution to a problem with 90 cities")
+![problem20](img/problem_20.svg "Solution to a problem with 20 cities")

@@ -1,4 +1,4 @@
-# !/usr/bin/env python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import random
@@ -210,7 +210,7 @@ class GeneticAlgorithm:
     Class implementing genetic algorithm.
     """
 
-    def __init__(self, problem=None, population_size=POPULATION_SIZE, random_state=0):
+    def __init__(self, problem=None, population_size=POPULATION_SIZE, random_state=None):
         """
         Initiates the class.
 
@@ -219,7 +219,9 @@ class GeneticAlgorithm:
         :param random state: initial RNG state
         """
 
-        random.seed(random_state)
+        if random_state is not None:
+            random.seed(random_state)
+
         self._problem = problem if problem else Problem.generate_random_problem()
         self._population = Population(self._problem, population_size=POPULATION_SIZE)
         self._current_fitness = None
